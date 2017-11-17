@@ -22,9 +22,11 @@ class App extends Component {
 		return (
 			<div style={{textAlign: "center"}}>
 				{response
-					? <p>
-						The temperature in Florence is: {response} °F
-					</p>
+					? <div>
+						{response.map(function(flightNo, index) {
+							return <p key={index}>{flightNo}</p>;
+						})}
+					</div>
 					: <p>Loading...</p>}
 			</div>
 		);
